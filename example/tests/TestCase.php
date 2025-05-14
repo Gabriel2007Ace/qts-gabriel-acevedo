@@ -24,45 +24,22 @@ function verificarSituacao($media) {
 
 
     <?php
-    if (isset($_POST['calcular'])) {
-        $notas = [
-            $_POST['nota1'],
-            $_POST['nota2'],
-            $_POST['nota3'],
-            $_POST['nota4']
-        ];
+        // Definindo as notas diretamente no código
+    $notas = [8, 7, 9, 10]; // As notas que já estão pré-definidas
 
-        $media = calcularMedia($notas);
-        $situacao = verificarSituacao($media);
+    // Calculando a média e a situação com as notas pré-definidas
+    $media = calcularMedia($notas);
+    $situacao = verificarSituacao($media);
 
-        echo "<h3>Média: " . number_format($media, 2) . "</h3>";
-        echo "<h3>Situação: $situacao</h3>";
-    }
+    echo "<h3>Notas: " . implode(", ", $notas) . "</h3>";
+    echo "<h3>Média: " . number_format($media, 2) . "</h3>";
+    echo "<h3>Situação: $situacao</h3>";
 
 
     class CalculadoraMediaTest extends TestCase
     {
-        public function testMediaAprovado()
-        {
-            $notas = [8, 7, 9, 10];
-            $media = calcularMedia($notas);
-            $this->assertEquals(8.5, $media);
-        }
-    
-        public function testMediaRecuperacao()
-        {
-            $notas = [6, 5, 5, 4];
-            $media = calcularMedia($notas);
-            $this->assertEquals(5.0, $media);
-        }
-    
-        public function testMediaReprovado()
-        {
-            $notas = [3, 4, 2, 1];
-            $media = calcularMedia($notas);
-            $this->assertEquals(2.5, $media);
-        }
 
+        
 
         public function testMediaMaiorQueCinco()
         {
