@@ -1,5 +1,8 @@
 <?php
 
+// Rodar o teste ' .\vendor\bin\phpunit .\CalculatorTest.php '
+//.\vendor\bin\phpunit .\CalculatorTest.php
+
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
